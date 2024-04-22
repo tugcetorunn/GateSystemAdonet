@@ -39,6 +39,7 @@ namespace GateSystemAdonet
 
             //bağlantı açma kapama gibi süreç işlerinde using kullanabiliriz. using açtığı bağlantıyı kendi kapatır.
             //connection string data source yerine server, initial catalog yerine database yazılabilir.
+            
             using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-ATVPBPS; Initial Catalog = GateSystem; Integrated Security = true"))
             {
                 connection.Open();
@@ -53,6 +54,7 @@ namespace GateSystemAdonet
                 }
 
                 Console.ReadLine();
+
             }
             
         }
