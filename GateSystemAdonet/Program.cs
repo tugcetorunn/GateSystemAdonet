@@ -11,7 +11,7 @@ namespace GateSystemAdonet
     {
         static void Main(string[] args)
         {
-            DatabaseOperations.AllPlates();
+            DatabaseOperations.InsertPlate();
 
 
         }

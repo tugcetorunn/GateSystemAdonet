@@ -74,6 +74,24 @@ namespace GateSystemAdonet
 
             }
         }
+
+        public static void InsertPlate()
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-ATVPBPS; Initial Catalog = GateSystem; Integrated Security = true"))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand("insert into PlateInfo (Name, LastName, PlateNo, BirthDate) " +
+                    "values (@Name, @LastName, @PlateNo, @BirthDate)", connection);
+                cmd.Parameters.Add("@Name", System.Data.SqlDbType.VarChar, 10).Value = "Tuğçe";
+                cmd.Parameters.Add("@LastName", System.Data.SqlDbType.VarChar, 10).Value = "Biçer";
+                cmd.Parameters.Add("@PlateNo", System.Data.SqlDbType.VarChar, 10).Value = "45 TAZ 45";
+                cmd.Parameters.Add("@BirthDate", System.Data.SqlDbType.Date).Value = "1997-09-08";
+
+                cmd.ExecuteNonQuery(); // crud işlemlerinde kullanmamız gerekir.
+
+            }
+        }
     }
 
 
